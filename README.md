@@ -14,14 +14,14 @@ An anomaly-detection project for industrial visual inspection using a PatchCore-
 
 ## Repository structure
 
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/Data/dataset.py` – MVTec dataset loader (train/test, optional masks)
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/Data/transformations.py` – image and mask transforms
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/extractor.py` – WideResNet feature extractor
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/memory_bank.py` – memory-bank creation function
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/knn.py` – KNN scoring and evaluation helpers
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/PatchSim.py` – PySide6 GUI app
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/notebooks/` – notebook-based walkthroughs
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/results/` – saved evaluation summaries
+- `Data/dataset.py` – MVTec dataset loader (train/test, optional masks)
+- `Data/transformations.py` – image and mask transforms
+- `extractor.py` – WideResNet feature extractor
+- `memory_bank.py` – memory-bank creation function
+- `knn.py` – KNN scoring and evaluation helpers
+- `PatchSim.py` – PySide6 GUI app
+- `notebooks/` – notebook-based walkthroughs
+- `results/` – saved evaluation summaries
 
 ## Requirements
 
@@ -59,10 +59,10 @@ Several scripts use a hardcoded Windows path via `project_root`.
 
 Update `project_root` in these files before running:
 
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/PatchSim.py`
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/knn.py`
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/memory_bank.py`
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/test.py`
+- `PatchSim.py`
+- `knn.py`
+- `memory_bank.py`
+- `test.py`
 
 Set it to your local repository path.
 
@@ -89,7 +89,7 @@ Then select dataset/category and upload an image.
 
 Example summary is available in:
 
-- `/home/runner/work/PCB-Anomaly-Detection/PCB-Anomaly-Detection/results/knn_results_summary_5.csv`
+- `results/knn_results_summary_5.csv`
 
 This file contains per-category metrics such as:
 
