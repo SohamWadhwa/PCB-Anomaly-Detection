@@ -67,7 +67,6 @@ class SetupPage(QWidget):
         self.category_combo = QComboBox()
         self.update_categories(self.dataset_combo.currentText())
 
-        # Optional: add this if you later want a feature extractor dropdown
         # self.extractor_combo = QComboBox()
         # self.extractor_combo.addItems(["WideResNet50", "ResNet18", "ViT"])
 
@@ -84,7 +83,6 @@ class SetupPage(QWidget):
         form.addWidget(QLabel("Category"))
         form.addWidget(self.category_combo)
 
-        # Uncomment if you add extractor selection
         # form.addWidget(QLabel("Feature extractor"))
         # form.addWidget(self.extractor_combo)
 
@@ -225,7 +223,6 @@ class ResultPage(QWidget):
         body = QHBoxLayout()
         body.setSpacing(16)
 
-        # Left: original image
         left_panel = QFrame()
         left_panel.setFrameShape(QFrame.StyledPanel)
         left_layout = QVBoxLayout(left_panel)
@@ -243,7 +240,6 @@ class ResultPage(QWidget):
         left_layout.addWidget(left_header)
         left_layout.addWidget(self.image_label, 1)
 
-        # Right: results
         right_panel = QFrame()
         right_panel.setFrameShape(QFrame.StyledPanel)
         right_layout = QVBoxLayout(right_panel)
@@ -274,7 +270,6 @@ class ResultPage(QWidget):
         body.addWidget(left_panel, 1)
         body.addWidget(right_panel, 1)
 
-        # Bottom: anomaly map
         bottom_panel = QFrame()
         bottom_panel.setFrameShape(QFrame.StyledPanel)
         bottom_layout = QVBoxLayout(bottom_panel)
@@ -372,7 +367,6 @@ class ResultPage(QWidget):
         self.status_info.setText(f"Status: {status if status is not None else '-'}")
 
     def resizeEvent(self, event):
-        # Keep images scaled properly when window resizes
         if self.current_image_path:
             pixmap = QPixmap(self.current_image_path)
             if not pixmap.isNull():
@@ -441,10 +435,6 @@ class PCBApp(QMainWindow):
     def go_to_results(self, image_path):
         self.image_path = image_path
 
-        # Placeholder hooks for your logic:
-        # score = ...
-        # prediction = ...
-        # heatmap_path = ...
         img = Image.open(self.image_path).convert("RGB")
         transform = getImageNetTransforms()
         self.img_tensor = transform(img)
